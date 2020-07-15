@@ -122,7 +122,6 @@ module.exports = {
             context: __dirname,
             // referrance file which were build by dllplugin 
             manifest: require(path.join(rootPath, './dist/thirdPlugin.manifest.json')),
-        }),
-
+        })
     ]
 }

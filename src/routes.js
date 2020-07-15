@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import dynamic from 'dva/dynamic'
 import CommonLayout from '@/components/layout/index'
 import Loading from '@/components/loading'
-import { Router, Route, Switch } from 'dva/router'
+import NotFound from '@/routes/404'
+import { Router, Route, Switch, Redirect } from 'dva/router'
 
 // set defult loading during component load by dva/dynamic
 dynamic.setDefaultLoadingComponent(Loading)
@@ -95,11 +96,15 @@ function RouterConfig ({ app, history }) {
     const routeContext = require.context('./routes', true, /route\.js$/)
     const routes = getRoutesByFiles(routeContext, app)
     return <Router history={history}>
-        <CommonLayout>
-            <Switch>
-                {routes.map(route => createRoute(route))}
-            </Switch>
-        </CommonLayout>
+        <Switch>
+            <Route path='/404' component={NotFound} />
+            <CommonLayout>
+                <Switch>
+                    {routes.map(route => createRoute(route))}
+                    <Redirect to="/404" />
+                </Switch>
+            </CommonLayout>
+        </Switch>
     </Router>
 }
 export default RouterConfig
