@@ -1,0 +1,42 @@
+.common-layout-container {
+  min-height: 100%;
+}
+.common-sider-container {
+  .logo {
+    position: relative;
+    height: 64px;
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      border-radius: 50%;
+      background: url(~assets/img/avatar.png) no-repeat center center/100%;
+    }
+  }
+  .sub-menu-item {
+    display: block;
+  }
+  .menu-item {
+    display: block;
+    li {
+      height: 40px;
+      line-height: 40px;
+      padding-left: 24px;
+    }
+  }
+}
+.common-header-container {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+.common-content-container {
+  padding: 24px;
+}

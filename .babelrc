@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        [
+            "dva-hmr"
+        ],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": true
+            }
+        ]
+        // [
+        //     "react-css-modules",
+        //     {
+        //         "exclude": "node_modules",
+        //         "webpackHotModuleReloading": true
+        //     }
+        // ]
+    ]
+}

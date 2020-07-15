@@ -1,0 +1,101 @@
+Arguments: 
+  F:\programFile\nodejs\node.exe C:\Users\linpg\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add antd
+
+PATH: 
+  C:\Users\linpg\bin;C:\Users\linpg\AppData\Local\Programs\Git\mingw64\bin;C:\Users\linpg\AppData\Local\Programs\Git\usr\local\bin;C:\Users\linpg\AppData\Local\Programs\Git\usr\bin;C:\Users\linpg\AppData\Local\Programs\Git\usr\bin;C:\Users\linpg\AppData\Local\Programs\Git\mingw64\bin;C:\Users\linpg\AppData\Local\Programs\Git\usr\bin;C:\Users\linpg\bin;F:\programFile;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;F:\program file\nodejs;F:\programFile\Git\cmd;F:\programFile\nodejs;C:\Users\linpg\AppData\Local\Microsoft\WindowsApps;C:\Users\linpg\AppData\Local\Programs\Git\cmd;F:\program file\Microsoft VS Code\bin;C:\Users\linpg\AppData\Roaming\npm;C:\Users\linpg\AppData\Local\Programs\Git\usr\bin\vendor_perl;C:\Users\linpg\AppData\Local\Programs\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  8.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: http://repo.bngrp.com/repository/npm-public/rc-steps/-/rc-steps-4.0.1.tgz: Request failed "404 Not Found"
+      at ResponseError.ExtendableBuiltin (C:\Users\linpg\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:696:66)
+      at new ResponseError (C:\Users\linpg\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:802:124)
+      at Request.<anonymous> (C:\Users\linpg\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67057:16)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at Request.module.exports.Request.onRequestResponse (C:\Users\linpg\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141625:10)
+      at emitOne (events.js:116:13)
+      at ClientRequest.emit (events.js:211:7)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:552:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:119:17)
+
+npm manifest: 
+  {
+    "name": "dva-origin",
+    "author": "pika",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node build/ready && node build/devServer.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "lint": "eslint --ext .js src test",
+      "lint-fix": "eslint --fix --ext .js --ext .jsx src/",
+      "precommit": "npm run lint"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/core": "^7.10.2",
+      "@babel/plugin-transform-runtime": "^7.10.1",
+      "@babel/preset-env": "^7.10.2",
+      "@babel/preset-react": "^7.10.1",
+      "@babel/runtime": "^7.10.2",
+      "@commitlint/cli": "^9.0.1",
+      "@commitlint/config-conventional": "^9.0.1",
+      "babel-eslint": "^10.1.0",
+      "babel-loader": "^8.1.0",
+      "case-sensitive-paths-webpack-plugin": "^2.3.0",
+      "css-loader": "^3.6.0",
+      "eslint": "^6.8.0",
+      "eslint-config-umi": "^1.6.0",
+      "eslint-loader": "^4.0.2",
+      "eslint-plugin-flowtype": "^5.1.3",
+      "eslint-plugin-import": "^2.21.2",
+      "eslint-plugin-jsx-a11y": "^6.3.1",
+      "eslint-plugin-react": "^7.20.0",
+      "eslint-plugin-react-hooks": "^4.0.4",
+      "file-loader": "^6.0.0",
+      "fs-extra": "^8.1.0",
+      "html-webpack-plugin": "^4.3.0",
+      "husky": "^4.2.5",
+      "mini-css-extract-plugin": "^0.9.0",
+      "open": "^7.0.4",
+      "optimize-css-assets-webpack-plugin": "^5.0.3",
+      "postcss-loader": "^3.0.0",
+      "pre-commit": "^1.2.2",
+      "sass-loader": "^8.0.2",
+      "terser-webpack-plugin": "^2.3.7",
+      "url-loader": "^4.1.0",
+      "webpack": "^4.43.0",
+      "webpack-dev-server": "^3.11.0"
+    },
+    "dependencies": {
+      "antd": "^4.2.5",
+      "dva": "^2.4.1",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm run lint",
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+    },
+    "engines": {
+      "node": ">=8.10.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
