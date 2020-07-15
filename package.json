@@ -84,7 +84,7 @@
   ],
   "_env_": {
     "dev": {
-      "PUBLIC_PATH": "./",
+      "PUBLIC_PATH": "/",
       "API_BASE": "http:14.29.82.198"
     },
     "uat": {
@@ -92,7 +92,7 @@
       "API_BASE": "http:14.29.82.198"
     },
     "prod": {
-      "PUBLIC_PATH": "./",
+      "PUBLIC_PATH": "/",
       "API_BASE": "http:14.29.82.198"
     }
   },
