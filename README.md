@@ -16,8 +16,8 @@ webpack & react & dva & antd
   + services        # 接口调用文件
   + utils           # 工具类
     constants.js    # 全局使用的常量
+    router.config.js# 路由入口配置
 .babelrc            # babel配置文件
-.justreq            # justreq配置文件
 README.md
 ```
 
@@ -45,43 +45,33 @@ npm start
 ```
 
 ## 开发指引
-本框架以路由为单位切分子系统及页面，页面路径`/routes/[子系统]/[页面]`
-
-故，做以下约定：
-
-1. 页面私有组件存放在`/routes/[子系统]/[页面]/components/`即可，不要放入公共组件库
-2. 页面私有model也存放在页面路径下，如`/routes/[子系统]/[页面]/model.js`
-3. 页面路由统一命名为`route.js`，存入于页面路径`/routes/[子系统]/[页面]/route.js`
+该分支在基于少量路由系统，所有路由入口文件可以在router.config.js中配置并
+dynamic按需引入了页面中的所有路由，dynamic按需引入路由同时也注册了该路由组件需要用到的model
 
 ### 路由配置
-为实现按需加载及路由拦截，路由须统一配置为异步加载。以下是`/routes/home/route.js`示例：
+为实现路由按需加载，请在router.config.js中配置所有路由，dynamic中的app instance为dva创建的app instance
 ```javascript
-export default [
-  {
-    breadcrumbName: '用户信息管理',
-    path: '/users',
-    models: Model,
-    component: UserList
-  },
-];
-```
-如需配置子路由，添加routes节点即可：
-```javascript
-export default [
-  {
-    breadcrumbName: '用户信息管理',
-    path: '/users',
-    model: Model,
-    component: UserList,
-    routes: [
-      {
-        breadcrumbName: '用户详情',
-        path: '/users/detail',
-        component: Detail,
-      }
-    ]
-  },
-];
+[{
+    path: '/',
+    pathname: '首页',
+    component: app => dynamic({
+        app,
+        component: () => import('./routes/home'),
+        models: () => [
+            import('./models/home'),
+        ]
+    })
+}, {
+    path: '/integral',
+    pathname: 'Menu1',
+    component: app => dynamic({
+        app,
+        component: () => import('./routes/menu/index'),
+        models: () => [
+            import('./models/menu/model'),
+        ]
+    })
+}]
 ```
 
 add by pika

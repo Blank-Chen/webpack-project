@@ -2,28 +2,40 @@
 * @desc common layout
 * @author pika
 */
-import React from 'react'
-import { Layout } from 'antd'
-import SideBar from './sideBar'
-import CommonHeader from './header'
-import CommonBreadcrumb from './breadcrump'
+import React, { useEffect } from 'react'
+import { Layout, Menu } from 'antd'
+import { Link } from 'dva/router'
+import './style.scss'
 
-const { Content, Footer } = Layout;
+const { Content, Footer, Header } = Layout;
 
 function CommonLayout (props) {
+    useEffect(() => {
+        // do sth here just like update page routes
+        return () => {
+
+        }
+    })
     return (
         <Layout className="common-layout-container">
-            <SideBar />
-            <Layout className="site-layout">
-                <CommonHeader />
-                <Content className="common-content-container">
-                    <CommonBreadcrumb />
-                    <div className="site-layout-background">
-                        {props.children}
-                    </div>
-                </Content>
-                <Footer style={{ textAlign: 'center' }}>©2020 Created by pika</Footer>
-            </Layout>
+            <Header>
+                <div className="logo" />
+                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                    <Menu.Item key="1">
+                        <Link to="/">Home</Link>
+                    </Menu.Item>
+                    <Menu.Item key="2">
+                        <Link to="/league">Menu1</Link>
+                    </Menu.Item>
+                    <Menu.Item key="3">
+                        <Link to="/league/add">Menu1-1</Link>
+                    </Menu.Item>
+                </Menu>
+            </Header>
+            <Content style={{ padding: '0 50px' }}>
+                <div className="site-layout-content">{props.children}</div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>©2020 Created by pika</Footer>
         </Layout>
     )
 }

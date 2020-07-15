@@ -10,13 +10,13 @@ export default {
     setup () { }
   },
   effects: {
-    *fetch ({ payload }, { call, put }) {// eslint-disable-line
+    *fetch ({ payload }, { call, put }) { // eslint-disable-line
       yield put({ type: 'save' });
     },
   },
 
   reducers: {
-    save (state, { payload }) {// eslint-disable-line
+    save (state, { payload }) { // eslint-disable-line
       return state.merge(payload)
     },
   },
